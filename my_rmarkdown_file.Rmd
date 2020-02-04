@@ -18,7 +18,7 @@ link-citations: no
 ```{r setup, include=FALSE}
 library(tufte)
 # invalidate cache when the tufte version changes
-knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tufte'),echo = TRUE,
+knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tufte'),echo = FALSE,
                       comment = "%%",
                       warning = FALSE,
                       message = FALSE,
@@ -26,31 +26,32 @@ knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tufte'),echo =
 options(htmltools.dir.version = FALSE)
 ```
 
-```{r load-data, cache=TRUE}
+```{r load-data, message=FALSE}
 library(tidyverse)
 data <- data(starwars)
 knitr::read_chunk("my-external-code.R")
 ```
 
-# Figure
+# A ggplot of starwars stuff
 
-```{r starwars-plot, dependson="load-data", fig.cap="A ggplot of starwars stuff", fig.align='center', cache=TRUE, echo=FALSE}
+```{r starwars-plot, dependson="load-data", fig.align='center', cache=TRUE}
 ```
 
-We can see in Figure \@ref(fig:starwars-plot) the scatter plot of height and mass of human species.
+We can see in above figure, the scatter plot of height and mass of human species.
 
-```{r, starwars-fig, fig.cap="My non-code yoda figure", echo=FALSE}
+# My non-code yoda figure
+```{r, starwars-fig}
 knitr::include_graphics("figures/yoda.png")
 ```
 
-We can see in Figure \@ref(fig:starwars-fig) the image of yoda in starwars.
+We can see in above figure, the image of yoda in starwars.
 
-# Table
+# A knit kable table of  starwars data
 
-```{r starwars-tbl, dependson="load-data", cache=TRUE, echo=FALSE}
+```{r starwars-tbl, dependson="load-data", cache=TRUE}
 ```
 
-We can see in Table \@ref(tab:starwars-tbl) some data for human species.
+We can see in above table, some data for human species.
 
 On a site note, these articles are fun to read [@wang2019survey; @zhang2019integrating].
 

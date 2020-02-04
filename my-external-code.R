@@ -14,5 +14,5 @@ starwars %>%
          height,
          mass,
          homeworld) %>%
-  knitr::kable(caption="A knit kable table of  starwars data")
+  knitr::kable()
 
